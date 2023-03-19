@@ -121,11 +121,24 @@
             <h1>Hi, I'm Valarie.</h1>
             <p class="subtext">Here's some of my research</p>
         
-            <form>
-                <input type="text" id="password" value="Enter Password">
+            <form action="home.html" onSubmit="return passCheck()">
+                <input type="text" id="password" placeholder="Enter Password">
                 <input type="submit" class="submit" value=">">
             </form>
         </div>
+
+        <script>
+            var password = "Maveryk";
+            function passCheck() {
+                if (document.getElementById('password').value != password) {
+                    alert("Wrong password - try again.");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        </script>
         
         <footer>
             <a href="https://www.linkedin.com/in/valarie-sherr/" target="blank"><i class="fa fa-linkedin"></i></a>
