@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset=""UTF-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vsherr Research</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <!--navigation section-->
+        <header>
+            <h3 class="site-title">Valarie Sherr</h3>
+            <a class="resume-btn"><button>Resume</button></a>
+        </header>
+
+        <!--main text section-->
+        <div class="main-text">
+            <h1 style="font-weight: 600;">VSherr Portfolio</h1>
+            <h3 style="font-weight: 100;">Student @ University of Michigan.</h3>
+            <p style="padding-top: 20px; font-size: 0.8 em;">Pursuing a degree in business with minors in computer science as well as quantitative methods in the social sciences.</p>
+        </div>
+        
+        <!--avatar sectoin-->
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <script src="https://unpkg.com/@rive-app/canvas@1.0.102"></script>
+        <script>
+            new rive.Rive({
+                src: "https://rive.app/s/VqUIHOXK00mk7erG7mhUwg/embed",
+                canvas: document.getElementById("canvas"),
+                autoplay: true,
+                stateMachines: "bumpy",
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset=""UTF-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vsherr Research</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            * {
+                background-color: #222222;
+                color: #ffffff;
+                font-family: 'Source Code Pro', monospace;
+            }
+
+            body {
+                height: 100%;
+                text-align: center
+            }
+
+            .container {
+                width: max-content;
+                position: absolute;
+                margin: 0;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            h1 {
+                display: inline;
+            }
+
+            .subtext, form {
+                opacity: 0;
+                transform: translateY(1rem);
+                animation: fade 2s ease 2.6s forwards;
+            }
+
+            footer {
+                color: #ffffff;
+                text-align: center;
+                margin-top: 50%;
+            }
+
+            a:link, a:visited, a:hover, a:active {
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+            input {
+                border-radius: 4px;
+                background-color:#464646;
+                border: 0px solid transparent;
+                font-family: 'Source Code Pro', monospace;
+            }
+
+            .submit {
+                cursor: pointer;
+            }
+
+
+            /**typing animation**/
+
+            h1::before, h1::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            h1::before {
+                background: #222222;
+                animation: typewriter 2s steps(16) 1s forwards;
+            }
+
+            h1::after {
+                width: 0.125em;
+                height: 1.2em;
+                background:#ffffff;
+                animation: cursor 2s steps(16) 1s forwards,
+                blink 900ms steps(16) infinite;
+            }
+
+            @keyframes typewriter {
+                to { 
+                    left: 100%; 
+                }
+            }
+
+            @keyframes cursor {
+                to { 
+                    left: 99%; 
+                }
+            }
+
+            @keyframes blink {
+                to {
+                    background: transparent;
+                }
+            }
+
+
+            /**text fade in animation**/
+
+            @keyframes fade {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+
+    <body class="splash">
+        <div class="container">
+            <h1>Hi, I'm Valarie.</h1>
+            <p class="subtext">Here's some of my research</p>
+        
+            <form>
+                <input type="text" id="password" value="Enter Password">
+                <input type="submit" class="submit" value=">">
+            </form>
+        </div>
+        
+        <footer>
+            <a href="https://www.linkedin.com/in/valarie-sherr/" target="blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://open.spotify.com/user/vsherr842" target="blank"><i class="fa fa-spotify"></i></a>
+        </footer>
+    </body>
+
+</html>
