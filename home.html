@@ -19,22 +19,95 @@
 
         <!--main text section-->
         <div class="main-text">
-            <h1 style="font-weight: 600;">VSherr Portfolio</h1>
+            <h1 style="font-weight: 600; color: #128F8D;">VSherr Portfolio</h1>
             <h3 style="font-weight: 100;">Student @ University of Michigan.</h3>
             <p style="padding-top: 20px; font-size: 0.8 em;">Pursuing a degree in business with minors in computer science as well as quantitative methods in the social sciences.</p>
+            <p>Outside of school, I enjoy piano-playing, video-editing, & <span style="color: #128F8D; font-weight: bold;">coffee</span>.</p>
         </div>
         
-        <!--avatar sectoin-->
-        <canvas id="canvas" width="500" height="500"></canvas>
-        <script src="https://unpkg.com/@rive-app/canvas@1.0.102"></script>
+        <!--avatar section-->
+        <div class="avatar-container">
+            <iframe style="border: none" width="200" height="200" src="https://rive.app/s/VqUIHOXK00mk7erG7mhUwg/embed" allowfullscreen></iframe>
+        </div>
+        
+        <!--links section-->
+        <div class="links">
+            <a href="https://www.linkedin.com/in/valarie-sherr/" target="blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://open.spotify.com/user/vsherr842" target="blank"><i class="fa fa-spotify"></i></a>
+        </div>
+
+        <!--research section-->
+        <div class="wrapper">
+            <div class="tabs">
+                <div class="tab-list-container">
+                    <ul class="tab-list">
+                        <li class="active">
+                            <a class="tab-control" href="#tab-1">
+                                <h3>Investments</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="tab-control" href="#tab-2">
+                                <h3>News</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="tab-control" href="#tab-3">
+                                <h3>Coding</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="tab-control" href="#tab-4">
+                                <h3>More</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-panel active" id="tab-1">
+                    <p>
+                        These are contents of tab 1.
+                    </p>
+                </div>
+                <div class="tab-panel" id="tab-2">
+                    <p>
+                        These are contents of tab 2.
+                    </p>
+                </div>
+                <div class="tab-panel" id="tab-3">
+                    <p>
+                        These are contents of tab 3.
+                    </p>
+                </div>
+                <div class="tab-panel" id="tab-4">
+                    <p>
+                        These are contents of tab 4.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script>
-            new rive.Rive({
-                src: "https://github.com/vsherr314/vsherr-research/blob/main/resources/avatar_me.riv",
-                canvas: document.getElementById("canvas"),
-                autoplay: true,
-                stateMachines: "bumpy",
+            $('.tab-list').each(function(){
+            var $this = $(this);
+            var $tab = $this.find('li.active');
+            var $link = $tab.find('a');
+            var $panel = $($link.attr('href'));
+
+            $this.on('click', '.tab-control', function(e) {
+                e.preventDefault();
+                var $link = $(this),
+                    id = this.hash;
+
+                if (id && !$link.is('.active')) {
+                $panel.removeClass('active');
+                $tab.removeClass('active');
+
+                $panel = $(id).addClass('active');
+                $tab = $link.parent().addClass('active');
+                }
             });
-        </script>
+            });
+        </script>    
     </body>
 
 </html>
